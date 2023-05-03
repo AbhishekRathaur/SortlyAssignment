@@ -22,10 +22,10 @@ public class HdrHistogramUtilImpl implements IHdrHistogramUtil{
     }
 
     @Override
-    public double getPercentileForTimeRange(int percent, long startTime, long endTime){
+    public double getPercentileForTimeRange(int percent, long startTimestamp, long endTimestamp){
         Histogram filteredHistogram = histogram.copy();
-        filteredHistogram.setStartTimeStamp(startTime);
-        filteredHistogram.setEndTimeStamp(endTime);
+        filteredHistogram.setStartTimeStamp(startTimestamp);
+        filteredHistogram.setEndTimeStamp(startTimestamp);
         double percentile = filteredHistogram.getPercentileAtOrBelowValue(50);
         return percentile;
     }

@@ -5,5 +5,5 @@ public interface IHdrHistogramUtil {
 
     double getPercentile(long percent);
 
-    double getPercentileForTimeRange(int percent, long startTime, long endTime);
+    double getPercentileForTimeRange(int percent, long startTimestamp, long endTimestamp);
 }
