@@ -10,7 +10,13 @@ public class Main {
 
         hdrHistogramUtil.recordTime(100);
 
-        hdrHistogramUtil.recordTime(100);
+        hdrHistogramUtil.recordTime(90);
+        hdrHistogramUtil.recordTime(200);
+
+        double p50 = hdrHistogramUtil.getPercentile(50);
+        double p99 = hdrHistogramUtil.getPercentile(99);
+        double p99ForLastPeriodOf100millisecond = hdrHistogramUtil.getPercentileForTimeRange(99,System.currentTimeMillis()-200,
+                System.currentTimeMillis()-100);
 
     }
 }
